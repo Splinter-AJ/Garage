@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta  charset="utf-8">
+    <title>Booking form</title>
+<style>
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body {
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+div.elem-group {
+  margin: 20px 0;
+}
+
+div.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+}
+
+label {
+  display: block;
+  font-family: 'TimesNewRoman';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 3px;
+  border: 3px solid #777;
+  box-sizing: border-box;
+  font-size: 1.35em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 8px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+button {
+  height: 50px;
+  background: green;
+  border: none;
+  color: white;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+
+</style>
+
+</head>
+<body style="text-align:center;background-color:Lightskyblue;">
+<h1>Final Submission </h1>
+
+<form action="form" method="post">
+    {% csrf_token %}
+<div class="container">
+
+    <br>
+    <br>
+    <input type="text" name="username" placeholder="Enter your name"><br>
+    <input type="number" name="mob" placeholder="Enter your Mobile Number"><br>
+    <input type="email" name="email" placeholder="Enter your Email ID"><br>
+    <input type="text" name="Address" placeholder="Enter your Address "><br><br>
+
+
+
+
+
+<script>
+var subjectObject = {
+  "4-Wheeler": {
+    "Maruti Suzuki Ertiga -RS 250000/-": ["850000"],
+    "Renault Triber -RS 200000/-": ["200000"],
+    "Honda BR-VRS - Rs 350000/-": ["350000"],
+    "Volvo V40 Cross Country -RS 450000/-": ["450000"],
+    "Volkswagen Cross Polo -RS 280000/-": ["280000"],
+    "Maruti Suzuki Eeco -RS 500000/-": ["500000"],
+    "Mahindra Alturas -RS 465000/-": ["465000"],
+    "Maruti Suzuki Ertiga XL6 -RS 245000/-": ["245000"]
+  },
+  "3-Wheeler": {
+    "Mahindra Alfa 3 Wheeler -RS 178520/-": ["178520"],
+    "Bajaj Compact RE 3 Wheeler -RS 156980/-": ["156980"],
+    "Kinetic Safar Smart 3 Wheeler -RS 1786790/-": ["1786790"],
+    "Piaggio Ape Xtra LDX 3 Wheeler -RS 258960/-": ["258960"]
+  },
+  "2-Wheeler": {
+    "Honda Activa -RS 85350/-": ["85350"],
+    "Hero HF Deluxe -RS 65280/-": ["65280"],
+    "Bajaj Pulsar -RS 98520/-": ["98520"],
+    "Royal Enfield Classic 350 -RS 198520/-": ["198520"],
+    "Hero Glamour -RS 75280/-": ["75280"],
+    "Hero Xtreme 160R -RS 95000/-": ["95000"],
+    "Bajaj Avenger Street 160 -RS 289570/-": ["289570"]
+
+  }
+}
+
+var d = {
+
+"Ernakulam": {
+    "Aluva": ["Lins", "Imges", "Tbles", "ists"],
+    "Kothamnagalam": ["Borrs", "Mgins", "Bakgrounds", "loat"],
+    "Paravur": ["Variabls", "Operatrs", "Funtions", "Coditions"]
+  },
+  "Alappuzha": {
+    "Mavelikkara": ["Vaiables", "trings", "rrays"],
+    "Chengannur": ["SELET", "UPDTE", "DEETE"]
+  },
+  "Trivandrum": {
+    "Neyyattinkara": ["ariables", "Strigs", "Arays"],
+    "Varkala": ["SEECT", "UDTE", "DELE"]
+  },
+  "Idukki": {
+    "Perumade": ["Varables", "Srings", "Arrys"],
+    "Thodupuzha": ["SEECT", "UPATE", "DELTE"]
+  },
+  "Kollam": {
+    "Punalur": ["Variables", "Strings", "Arrays"],
+    "Kottarakara": ["SELECT", "UPDATE", "DELETE"],
+    "Karunagapally": ["SELET", "UPATE", "DEETE"]
+  },
+  "Trissur": {
+    "Chavakadu": ["Variables", "Strings", "Arrays"],
+    "Chalakkudi": ["SELECT", "UPDATE", "DELETE"],
+    "Kodungallur": ["SELCT", "UPDTE", "DELEE"],
+  }
+}
+
+window.onload = function() {
+  var subjectSel = document.getElementById("subject1");
+  var topicSel = document.getElementById("topic1");
+
+  var a = document.getElementById("a");
+  var b = document.getElementById("b");
+
+
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+   for (var r in d) {
+    a.options[a.options.length] = new Option(r, r);
+  }
+  a.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+   
+    b.length = 1;
+    //display correct values
+    for (var p in d[this.value]) {
+      b.options[b.options.length] = new Option(p, p);
+    }
+  }
+}
+
+</script>
+
+<form name="form1" id="form1" action="/action_page.php">
+Vehicles: <select name="subject" id="subject1">
+    <option value="" selected="selected">Select Vehicle</option>
+  </select>
+  <br><br>
+Modles: <select name="topic" id="topic1">
+    <option value="" selected="selected">Please select Vehicle-Type first</option>
+  </select>
+  <br><br>
+<!--Prize: <select name="chapter" id="chapter">-->
+<!--    <option value="" selected="selected">Please select topic first</option>-->
+<!--  </select>-->
+
+
+
+<form name="form2" id="form2" action="/action_page.php">
+District: <select name="subject" id="a">
+    <option value="" selected="selected">Select District</option>
+  </select>
+  <br><br>
+Sub District: <select name="topic" id="b">
+    <option value="" selected="selected">Please select District first</option>
+  </select>
+  <br><br>
+
+</form>
+
+</form>
+
+    <button href="#" onClick="alert('Your order is Placed Succesfully!');">Submit</button>
+    <br>
+     <br>
+    <a href="/">Home Page</a>
+</div>
+</form>
+</body>
+</html>
+
+

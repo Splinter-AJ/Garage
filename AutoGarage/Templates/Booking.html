@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title style="font-size:100">Booking</title>
+    <style>
+body {
+  background-image: url({% static 'image/booking.png' %});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body {
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+div.elem-group {
+  margin: 20px 0;
+}
+
+div.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+}
+
+label {
+  display: block;
+  font-family: 'Nanum Gothic';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+button {
+  height: 50px;
+  background: orange;
+  border: none;
+  color: white;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+</style>
+</head>
+<body style="text-align:center;background-color:Lightskyblue;">
+
+<div class="container">
+
+
+
+
+
+
+    <div class="elem-group">
+    <label style="color:white;" for="name">Your Name</label>
+    <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
+  </div>
+  <div class="elem-group">
+    <label style="color:white;" for="email">Your E-mail</label>
+    <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+  </div>
+  <div class="elem-group">
+    <label style="color:white;" for="phone">Your Phone</label>
+    <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+  </div>
+  <hr>
+  <div class="elem-group inlined">
+    <label style="color:white;" for="checkin-date">Check-in Date</label>
+    <input type="date" id="checkin-date" name="checkin" required>
+  </div>
+  <div class="elem-group inlined">
+    <label style="color:white;" for="checkout-date">Check-out Date</label>
+    <input type="date" id="checkout-date" name="checkout" required>
+  </div>
+
+  <hr>
+
+<br>
+
+
+
+
+    <p style="color:white;"><b>
+
+    In the fast-paced world of online marketing, visibility is a key component of making your website work. One of the easiest ways to be seen is through search engine results. While there are paid advertising options available, you can get a jump-start on your competition by adding organic results as well. Car Website Content with Content Motive capitalizes on organic search results by using topics that fit in line with your existing strategies while also helping to better populate a web search for your products and services.
+
+Having unique content helps your website in multiple ways. First, with engaging content that’s actually relevant to your business and specialized for you, your customers learn to turn to your website as an authority. Additionally, having website content helping your dealer site rank in search engines organically as opposed to just through paid advertising helps you better dominate results (especially when not all competitors utilize SEO content). So you gain a foothold in relevant searches and unique content helps increase your overall web authority, both in terms of your site’s Google ranking and with your customers.
+
+    A Terms and Conditions agreement acts as a legal contract between you (the company) and the user. It's where you maintain your rights to exclude users from your app in the event that they abuse your website/app, set out the rules for using your service and note other important details and disclaimers.
+
+Having a Terms and Conditions agreement is completely optional. No laws require you to have one. Not even the super-strict and wide-reaching General Data Protection Regulation (GDPR).
+
+        Your Terms and Conditions agreement will be uniquely yours. While some clauses are standard and commonly seen in pretty much every Terms and Conditions agreement, it's up to you to set the rules and guidelines that the user must agree to.</b></p>
+
+
+<a href="form">
+      <input type="submit" value="Booking">
+    </a>
+
+</div>
+
+
+</body>
+</html>

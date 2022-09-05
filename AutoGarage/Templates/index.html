@@ -1,0 +1,422 @@
+{% load static %}
+<!doctype html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Auto mobile</title>
+	<meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
+	<meta name="author" content="Web Domus Italia">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'source/bootstrap-3.3.6-dist/css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'source/font-awesome-4.5.0/css/font-awesome.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'style/slider.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'style/mystyle.css' %}">
+
+</head>
+
+<!-- Header -->
+
+<header>
+    <center>
+        <br>
+		<a href="#"> <img src="{% static 'image/collectionlogo1.png' %}" alt="logimage" width="120px;" height="120px;"></a>
+        <br>
+    </center>
+</header>
+	<!-- Navbar Up -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<div class="allcontain">
+	<div class="header">
+			<ul class="socialicon">
+				<li><a href="https://www.facebook.com/login/"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+			</ul>
+			<ul class="givusacall">
+				<li>Give us a call : +66666666 </li>
+			</ul>
+			<ul class="logreg">
+				{% if user.is_authenticated %}
+				<li> Hello&nbsp;&nbsp;&nbsp;{{user.username}} </li><br>
+				<li> <a href="credentials/logout"><span class="logout"> Logout</span> </a></li>
+				{% else %}
+				<li> <a href="credentials/login">Login </a> </li>
+				<li><a href="credentials/regis"><span class="register">Register</span></a></li>
+                 {% endif %}
+
+<li><label for="Branches"><span>Branches:</span></label>
+
+<select name="links" id="Branches" size="1" onchange="window.location.href=this.value;">
+  <option value="https://en.wikipedia.org/wiki/Ernakulam"> Ernakulam</option>
+  <option value="https://en.wikipedia.org/wiki/Idukki_district">Idukki</option>
+  <option value="https://en.wikipedia.org/wiki/Alappuzha">Alappuzha</option>
+  <option value="https://en.wikipedia.org/wiki/Malappuram">Malappuram</option>
+	<option value="https://en.wikipedia.org/wiki/Kollam">Kollam</option>
+	<option value="https://en.wikipedia.org/wiki/Trissur">Trissur</option>
+	<option value="https://en.wikipedia.org/wiki/Trivandrum">Trivandrum</option>
+</select>
+</li>
+				</ul>
+	</div>
+		</div>
+<br>
+
+				<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+
+				<button  class="btn" style="float: right;"><i class="fa fa-home" ></i><a href="credentials/login">Shop care</a></button><br>
+		<br>
+
+        <br>
+		<input  class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
+        <form action="https://google.com">
+    <input class="btn fa fa-search" type="submit" value="Search" style="float: right;">
+       </form>
+
+    </div>
+  </div>
+</nav>
+<!--_______________________________________ Carousel__________________________________ -->
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 200px) {
+  .text {font-size: 11px}
+}
+</style>
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+
+  <img src="{% static 'image/sla1.png' %}" style="width:100%" >
+
+</div>
+
+<div class="mySlides fade">
+
+  <img src="{% static 'image/slb.png' %}" style="width:100%">
+
+</div>
+
+<div class="mySlides fade">
+
+  <img src="{% static 'image/slc.png' %}" style="width:100%" >
+</div>
+
+
+	<div class="mySlides fade">
+
+  <img src="{% static 'image/sle.png' %}" style="width:100%" >
+
+</div>
+
+	<div class="mySlides fade">
+
+  <img src="{% static 'image/slf.png' %}" style="width:100%" >
+
+</div>
+</div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+	<span class="dot"></span>
+	<span class="dot"></span>
+
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+<!--	<div class="home">-->
+<!--		<div class="background_image" style="background-image:url({%static 'images/line.jpg'%})"></div>-->
+
+
+
+<!--<div class="allcontain">-->
+<!--	<div id="carousel-up" class="carousel slide" data-ride="carousel">-->
+<!--		<div class="carousel-inner " role="listbox">-->
+<!--			<div class="item active">-->
+<!--				<img src="{% static 'image/honda.jpg' %}" alt="oldcar">-->
+<!--				<div class="carousel-caption">-->
+
+
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="item">-->
+<!--				<img src="{% static 'image/porche.jpg' %}" alt="porche">-->
+<!--				<div class="carousel-caption">-->
+<!--					<h2>Porche</h2>-->
+<!--						<p>Lorem ipsum dolor sit amet, consectetur ,<br>-->
+<!--						sed do eiusmod tempor incididunt ut labore </p>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="item">-->
+<!--				<img src="{% static 'image/benz.jpg' %}" alt="benz">-->
+<!--				<div class="carousel-caption">-->
+<!--					<h2>Car</h2>-->
+<!--					<p>Lorem ipsum dolor sit amet, consectetur ,<br>-->
+<!--						sed do eiusmod tempor incididunt ut labore </p>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+
+<!--	</div>-->
+<!--</div>-->
+
+
+<!--     4 wheelers-->
+<style>
+body {
+  background-image: url({% static 'image/bg2.jpg' %});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+<div class="allcontain">
+	<div class="feturedsection">
+		<h1 class="text-center" style="color:white;"><span class="bdots">&bullet;</span>Featured<span class="carstxt">4 Wheelers</span>&bullet;</h1>
+	</div>
+	<div class="feturedimage" >
+		<div class="row firstrow" >
+			<div class="col-lg-6 costumcol colborder1">
+				<div class="row costumrow">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
+						<img style="height:250px; width:100%;" src="{% static 'image/4a.png' %}" alt="porsche">
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+						<div class="featurecontant" style="height:350px;">
+
+							<h1>Maruti-Ertiga</h1>
+
+							<p style="color:white;">Maruti Suzuki Ertiga brochure provides you with all the information you need regarding India’s no.1 selling MPV, its variants including Ertiga Smart Hybrid, and the key specifications of the new Ertiga. </p>
+
+								<h2>Price ₹ 850000/-</h2>
+			 				<button id="btnRM1" onclick="rmtxt()"><a href="https://www.marutisuzuki.com/ertiga/brochure"> READ MORE</a></button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 costumcol colborder2">
+				<div class="row costumrow">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
+						<img style="height:300px; width:100%;" src="{% static 'image/4b.png' %}" alt="porsche1">
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+						<div class="featurecontant" style="height:350px;" >
+							<h1>Volvo V40 Cross Country </h1>
+							<p style="color:white;">The Volvo V40 Cross Country 2013-2016 has 1 Diesel Engine and 1 Petrol Engine on offer. The Diesel engine is 1984 cc while the Petrol engine is 1596 cc . It is available with Automatic transmission.Depending upon the variant. </p>
+			 				<h2>Price ₹ 2700000/-</h2>
+			 				<button id="btnRM21"><a href="https://www.cardekho.com/volvo/volvo-v40-cross-country-2013-2016-specifications.htm"> READ MORE</a></button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!3 wheelers-->
+
+	<div class="allcontain">
+	<div class="feturedsection">
+		<h1 class="text-center" style="color:white;"><span class="bdots">&bullet;</span>Featured<span class="carstxt">3 Wheelers</span>&bullet;</h1>
+	</div>
+	<div class="feturedimage" >
+		<div class="row firstrow">
+			<div class="col-lg-6 costumcol colborder1">
+				<div class="row costumrow">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
+						<img style="height:300px; width:100%;" src="{% static 'image/3a1.png' %}" alt="porsche">
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+						<div class="featurecontant" style="height:365px;">
+							<h1>Mahindra Alfa Plus</h1>
+							<p style="color:white;">Mahindra Alfa Plus 3 wheeler offers a payload of 505 kg, with its gross weight of 995 kg. The power mahine behind this loading Mahindra 3 wheeler is Direct Injection, Air cooled, producing a maximum power of 7.4 HP and a peak torque of 18 Nm. </p>
+			 				<h2>Price ₹ 275000/-</h2>
+			 				<button id="btnRM45" onclick="rmtxt()"><a href="https://www.trucksbuses.com/3-wheeler/Load/Mahindra-Alfa-Plus"> READ MORE</a></button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 costumcol colborder2">
+				<div class="row costumrow">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon" style="400px;">
+						<img style="height:300px; width:100%;" src="{% static 'image/3b.png' %}" alt="porsche1" style="400px;">
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+						<div class="featurecontant" style="height:365px;">
+							<h1 >Bajaj compact re </h1>
+							<p style="color:white;"> The Bajaj CNG auto is preferred by both urban and rural customers who want a reliable three-wheeled commercial vehicle.
+
+Bajaj has decades of experience in building three-wheeled commercial vehicles. This is why the latest iteration of the Compact RE.</p>
+			 				<h2>Price ₹ 284845/-</h2>
+			 				<button id="btnRM245"><a href="https://www.bajajautofinance.com/three-wheeler-loan/Bajaj-RE---CNG">READ MORE</a></button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--		2 Wheelers-->
+
+
+	<div class="allcontain">
+	<div class="feturedsection" >
+		<h1 class="text-center" style="color:white;"><span class="bdots">&bullet;</span>Featured<span class="carstxt">2 Wheelers</span>&bullet;</h1>
+	</div>
+	<div class="feturedimage">
+		<div class="row firstrow">
+			<div class="col-lg-6 costumcol colborder1">
+				<div class="row costumrow">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon" style="height:395px;">
+						<img style="height:300px; width:100%;"src="{% static 'image/2b.png' %}" alt="porsche">
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon" style="height:345px;">
+						<div class="featurecontant" style="height:345px;">
+							<h1>Royal enfield classic 350</h1>
+							<p style="color:white;">The only modern feature present is ABS with single-channel and dual-channel options. Powering the 2020 Classic 350 is a 346cc, air-cooled engine that produces 19.1bhp of power and 28Nm of peak torque. </p>
+			 				<h2>Price ₹ 1,90,205 </h2>
+			 				<button id="btnRM" onclick="rmtxt()"><a href="https://www.royalenfield.com/in/en/motorcycles/classic-350/" >READ MORE</a></button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 costumcol colborder2">
+				<div class="row costumrow">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
+						<img style="height:300px; width:100%;" src="{% static 'image/2a.png' %}" alt="porsche1">
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+						<div class="featurecontant" style="height:345px;">
+							<h1>Bajaj Avenger Street 160 </h1>
+							<p style="color:white;"> The Bajaj Avenger Street 160 is powered by 160cc BS6 engine which develops a power of 14.79 bhp and a torque of 13.7 Nm. With front disc and rear drum brakes, Bajaj Avenger Street 160 comes anti-locking braking system.</p>
+			 				<h2>Price ₹1,12,563 </h2>
+			 				<button id="btnRM2"><a href="https://www.bajajauto.com/bikes/avenger/avenger-street-160"> READ MORE</a></button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<footer class="mt-auto">
+<div class="footer navbar-fixed-bottom my_footer">
+
+  <p class="text-center"> &copy; Collection Garage Pvt Ltd. All rights Reserved </p>
+
+</div>
+ </footer>
+<script src="{% static 'js/bootstrap.min.js' %}" ></script>
+</div>
+		</script>
+
+	</div>
+</div>
+		</div>
+</html>

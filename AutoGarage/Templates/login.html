@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+<style>
+    body
+{
+    margin: 0;
+    padding: 0;
+    background-color:#6abadeba;
+    font-family: 'Arial';
+}
+.login{
+        width: 382px;
+        overflow: hidden;
+        margin: auto;
+        margin: 20 0 0 450px;
+        padding: 80px;
+        background: #23463f;
+        border-radius: 15px ;
+
+}
+h2{
+    text-align: center;
+    color: #277582;
+    padding: 20px;
+}
+label{
+    color: #08ffd1;
+    font-size: 17px;
+}
+#Uname{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#Pass{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+
+}
+#log{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: blue;
+
+
+}
+span{
+    color: white;
+    font-size: 17px;
+}
+a{
+    float: right;
+    background-color: grey;
+}
+</style>
+</head>
+<body style="text-align:center;background-color:lightblue;">
+
+<br>
+    <br>
+
+
+
+
+<form action="login" method="post">
+{% csrf_token %}
+
+
+
+ <h1 style="font-family:Times New Roman;">Login Page</h1>
+
+
+        <div class="login">
+
+        <label><b>User Name
+        </b>
+            <br>
+        </label>
+        <input type="text" name="username" placeholder="Enter your username"><br>
+        <br>
+        <label><b>Password
+        </b>
+        </label>
+             <br>
+        <input type="password" name="username4" placeholder="Enter your passcode"><br><br>
+        <br><br>
+
+            <br>
+        <input type="submit">
+
+        <a href="regis">Register</a>
+
+
+
+        </div>
+
+
+
+
+
+
+
+</form>
+
+
+
+</body>
+</html>

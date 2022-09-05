@@ -1,0 +1,102 @@
+
+
+
+
+
+<form action="form" method="post">
+    {% csrf_token %}
+
+    <br>
+    <br>
+    <input type="text" name="username" placeholder="Enter your name"><br>
+    <input type="number" name="mob" placeholder="Enter your Mobile Number"><br>
+    <input type="email" name="email" placeholder="Enter your Email ID"><br>
+    <input type="text" name="Address" placeholder="Enter your Address "><br><br>
+
+
+    <script>
+var subjectObject = {
+  "4-Wheeler": {
+    "Maruti Suzuki Ertiga -RS 250000/-": ["850000"],
+    "Renault Triber -RS 200000/-": ["200000"],
+    "Honda BR-VRS - Rs 350000/-": ["350000"],
+    "Volvo V40 Cross Country -RS 450000/-": ["450000"],
+    "Volkswagen Cross Polo -RS 280000/-": ["280000"],
+    "Maruti Suzuki Eeco -RS 500000/-": ["500000"],
+    "Mahindra Alturas -RS 465000/-": ["465000"],
+    "Maruti Suzuki Ertiga XL6 -RS 245000/-": ["245000"]
+  },
+  "3-Wheeler": {
+    "Mahindra Alfa 3 Wheeler -RS 178520/-": ["178520"],
+    "Bajaj Compact RE 3 Wheeler -RS 156980/-": ["156980"],
+    "Kinetic Safar Smart 3 Wheeler -RS 1786790/-": ["1786790"],
+    "Piaggio Ape Xtra LDX 3 Wheeler -RS 258960/-": ["258960"]
+  },
+  "2-Wheeler": {
+    "Honda Activa -RS 85350/-": ["85350"],
+    "Hero HF Deluxe -RS 65280/-": ["65280"],
+    "Bajaj Pulsar -RS 98520/-": ["98520"],
+    "Royal Enfield Classic 350 -RS 198520/-": ["198520"],
+    "Hero Glamour -RS 75280/-": ["75280"],
+    "Hero Xtreme 160R -RS 95000/-": ["95000"],
+    "Bajaj Avenger Street 160 -RS 289570/-": ["289570"]
+
+  }
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("subject1");
+  var topicSel = document.getElementById("topic1");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+
+Vehicles: <select name="subject" id="subject1">
+    <option value="" selected="selected">Select Vehicle</option>
+  </select>
+  <br><br>
+Modles: <select name="topic" id="topic1">
+    <option value="" selected="selected">Please select Vehicle-Type first</option>
+  </select>
+  <br><br>
+<!--Prize: <select name="chapter" id="chapter">-->
+<!--    <option value="" selected="selected">Please select topic first</option>-->
+<!--  </select>-->
+
+
+
+
+    <button  id="submitForm">Submit</button>
+    <br>
+    <br>
+    <a href="/">Home Page</a>
+<script>
+    $("#submitForm").click(function() {
+        alert("You order is placed Successfully. ");
+    });
+
+</script>
+
+
+
+
+
+
